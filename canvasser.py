@@ -46,7 +46,7 @@ def allocate(location="48th Av, Block 10, House 4", lang="Spanish"):
             del available_i_details[k]
 
         if len(alloted_i)==2:              ''' If I already found the required number of investigators, here 2, I will return without further processing'''
-            print(available_i_details)
+            print(alloted_i)
             return alloted_i
 
 '''If I haven't found the required # investigators I will look for an investigator who doesn't know about the area but speaks the language that the household(location) speaks'''
@@ -56,7 +56,7 @@ def allocate(location="48th Av, Block 10, House 4", lang="Spanish"):
             alloted_i.append(k)
 
         if len(alloted_i)==2:
-            print (available_i_details)
+            print (alloted_i)
             return alloted_i
     
     for i in alloted_i: ''' Since the previous iteration was on available_i_details I did not remove the investigators from list, which is what I an doing here'''
@@ -68,9 +68,10 @@ def allocate(location="48th Av, Block 10, House 4", lang="Spanish"):
             alloted_i.append(key)
             del available_i_details[key]
         if len(alloted_i)==2:
-            print (available_i_details)
+            print (alloted_i)
             return alloted_i
     print("not enough investigators available. redirect request to the one closest to the location")
+    
     return alloted_i
 
 
