@@ -12,6 +12,7 @@ First to install mongoDB
 >>sudo apt-get update
 
 >>sudo apt-get install -y mongodb-org
+
 For more details about mongoDB installation refer https://docs.mongodb.com/manual/tutorial/install-mongodb-on-debian/ (since I used debian based OS)
 
 Next install pymongo (I did that using pip which was not installed in my machine so I have added steps for that as well)
