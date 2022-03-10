@@ -7,8 +7,8 @@ import sys
 
 def allocate(location, lang):
     
-	'''this is just for testing purpose. Next week I will use MongoDB to fetch tables and update tables. Using the information from tables available_investigator_details dictioinary will be updated'''
-	client= MongoClient("mongodb+srv://smritidas:justkidding@cluster0.jd128.mongodb.net")   
+	
+	client= MongoClient("mongodb+srv://user_id:password@cluster0.jd128.mongodb.net")   
 	db=client.myCanvassingdb
 	available_i_details={}
 	for doc in db.Available_investigators.find():
@@ -20,8 +20,9 @@ def allocate(location, lang):
 	inv_in_progress=[] 
 	''' to save the locations of ongoing interviews. This will later be updated in a db table'''
 
-	''' Here I am just cleaning the location. In the upcoming updates I will fetch location from map for the investigator's curr_location and the interview location will be entered by the coordinator. 
+	''' 
 	dist is for storing the distances of each available investigator from the location to be assigned
+	eta is for storing the distances of each unavailable investigator from location to be assigned
         alloted_i is used to store the IDs of investigators assigned to this particular location
 	'''
     
