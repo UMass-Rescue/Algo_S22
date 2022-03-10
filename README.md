@@ -30,4 +30,4 @@ pip 22.0.2 from /usr/lib/python3/dist-packages/pip (python 3.9)                 
 
 To run the python file in CLI:
 
-python3 canvasser.py "String-Address" "String-name of Language"
+>>python3 canvasser.py "String-Address" "String-name of Language"
