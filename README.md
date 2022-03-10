@@ -26,6 +26,7 @@ Next install pymongo (I did that using pip which was not installed in my machine
 
 >>pip3 --version             (to check version)
 pip 22.0.2 from /usr/lib/python3/dist-packages/pip (python 3.9)                    (Versions I am using, including python version)
+
 >>pip3 install pymongo 
 
 
