@@ -31,7 +31,7 @@ pip 22.0.2 from /usr/lib/python3/dist-packages/pip (python 3.9)                 
 >>pip3 install pymongo 
 
 
-Before running the code change the user_id and password for mongoDB. 
+Before running the code change the user_id and password for mongoDB. Also, create apikey.txt file with Google Maps API key.
 
 To run the python file in CLI:
 
