@@ -31,6 +31,10 @@ pip 22.0.2 from /usr/lib/python3/dist-packages/pip (python 3.9)                 
 >>pip3 install pymongo 
 
 
+Before running the code change the user_id and password for mongoDB. 
+
 To run the python file in CLI:
 
 >>python3 canvasser.py "String-Address" "String-name of Language"
+
+
