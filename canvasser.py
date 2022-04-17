@@ -11,7 +11,7 @@ import sys
 class Canvasser:
 	def __init__(self, location,lang):
 		self.url="https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&"
-		self.client= MongoClient("mongodb+srv://smritidas:justkidding@cluster0.jd128.mongodb.net")   
+		self.client= MongoClient("mongodb+srv://username:password@cluster0.jd128.mongodb.net")   
 		self.db=self.client.myCanvassingdb
 		self.location= location
 		self.language= lang
