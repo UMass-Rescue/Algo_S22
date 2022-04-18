@@ -71,13 +71,19 @@ class Canvasser:
 				investigator_details[doc.get('id')] = doc.get('details')
 		
 		
-		if list_dist[0]>(list_eta[0]) :
+		if len(list_dist)==0:
 			alloted_i.append(keys_list_eta[0])
-			if list_dist[0]>(list_eta[1]): 
-				alloted_i.append(keys_list_eta[1])
-				print("following officers are nearby, contact them:")
-				self.db.investigation_assigned.insert_one({"location":location,"investigators":alloted_i})
-				return alloted_i
+			alloted_i.append(keys_list_eta[1])
+			return alloted_i
+		else:
+			
+			if list_dist[0]>(list_eta[0]) :
+				alloted_i.append(keys_list_eta[0])
+				if list_dist[0]>(list_eta[1]): 
+					alloted_i.append(keys_list_eta[1])
+					print("following officers are nearby, contact them:")
+					self.db.investigation_assigned.insert_one({"location":location,"investigators":alloted_i})
+					return alloted_i
 		
 		for k in dist:
 			if self.location in investigator_details[k]["knows_loc"]:
