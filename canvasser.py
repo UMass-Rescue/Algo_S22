@@ -10,9 +10,19 @@ import sys
 
 class Canvasser:
 	def __init__(self, location,lang):
-		self.url="https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&"
-		self.client= MongoClient("mongodb+srv://username:password@cluster0.jd128.mongodb.net")   
-		self.db=self.client.myCanvassingdb
+		try:
+			self.client= MongoClient("mongodb+srv://smritidas:justkidding@cluster0.jd128.mongodb.net")   
+			self.db=self.client.myCanvassingdb
+		except (OSError):
+			print("OS error /network error, not able to connect to Mongodb please check credentials and Network access")
+		
+		try:
+			self.url="https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&"
+			self.api_file=open("apikey.txt")
+			self.api_key=self.api_file.read()
+			self.api_file.close()
+		except:
+			print("check if the api key text file is available in the same folder for google api access")
 		self.location= location
 		self.language= lang
 		self.location_check()
