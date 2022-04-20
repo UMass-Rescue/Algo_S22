@@ -37,22 +37,22 @@ The output will be a list with IDs of two investigators.
 
 **ADDITIONAL FEATURES:**
 
-1. The algorithm I have written is a very basic skeleton which is based on a few assumptions such as the number of people working on a case are around 10-15 (which is ideal case though) such that the time complexity would not impact the performance much. Another assumption is that I/O works perfectly fine without network failure and security issues. So there is scope of improvement.
+The algorithm I have written is a very basic skeleton which is based on a few assumptions such as the number of people working on a case are around 10-15 (which is ideal case though) such that the time complexity would not impact the performance much. Another assumption is that I/O works perfectly fine without network failure and security issues. So there is scope of improvement.
 
-2. Currently I am considering that the coordinator is managing only one case, ‘GAMMA’. Although it may be the case that the coordinator manages multiple cases and a few special agents are working on multiple cases which will impact the availability. This can be implemented in future. Based on this I will need to add the field where first I select the Case name.
+1. Currently I am considering that the coordinator is managing only one case, ‘GAMMA’. Although it may be the case that the coordinator manages multiple cases and a few special agents are working on multiple cases which will impact the availability. This can be implemented in future. Based on this I will need to add the field where first I select the Case name.
 
-3. Asynchronous programming can be added to improve the response time.  Fault tolerance needs to be handled with replication (with or without Docker). Once there is replication Data inconsistency needs to be handled across databases and collections. (Need to check the implementation of locks while updating the db.)
+2. Asynchronous programming can be added to improve the response time.  Fault tolerance needs to be handled with replication (with or without Docker). Once there is replication Data inconsistency needs to be handled across databases and collections. (Need to check the implementation of locks while updating the db.)
 
-4. Connecting the front-end with the part of the algorithm which updates the unavailable investigators to available investigators once the agent updates that he/she is done with their interviews on the mobile application. The approximation of start time can be improved.
+3. Connecting the front-end with the part of the algorithm which updates the unavailable investigators to available investigators once the agent updates that he/she is done with their interviews on the mobile application. The approximation of start time can be improved.
 
-5. Contacting the investigators directly without the coordinator intervening. 
+4. Contacting the investigators directly without the coordinator intervening. 
 
-6. Connecting the live location of the agents to the desktop application.
+5. Connecting the live location of the agents to the desktop application.
 
-7. Thinking of ways to optimize the algorithm itself, using data structures to optimize time and space complexity.
+6. Thinking of ways to optimize the algorithm itself, using data structures to optimize time and space complexity.
 Ways to improve the design of the database and integrating with the backend with postgres where all other sections of the projects are hosted (Interview Transcriber, License Plate Identifier, Dense Image Captioning).
 
-8. Need to consider the security aspects carefully. Example, use of environment variables for mongodb credentials while dockerizing.
+7. Need to consider the security aspects carefully. Example, use of environment variables for mongodb credentials while dockerizing.
 
 **Summary:**
 I learnt alot from being a part of this project. Although I could not implement the front end by myself, I learnt in the process. An example of learning was Azure blob implementation. Even though I did not use it, just giving it a try and coming across errors helped me learn. The backend implementation was something I would have loved to do but due to time constraints that could not happen. Also, the improvement part I have mentioned I hoped to have implemented at least some of those. One of the most important lessons for me was the CI/CD (Sam’s presentation on CI/CD was well done) and other presentations also helped me learn new topics.
