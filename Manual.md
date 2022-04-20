@@ -7,7 +7,9 @@ The intent behind the algorithm is to make it easier for the coordinator to keep
 Tech Stack includes:
 
 Python3
+
 Mongodb
+
 Google Maps API
 
 **WHAT I DID?**
