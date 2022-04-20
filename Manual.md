@@ -1,4 +1,4 @@
-MOTIVATION:
+**MOTIVATION:**
 
 The intent behind the algorithm is to make it easier for the coordinator to keep track of progress of an investigation, where the investigations need to be conducted and assign the agents to the interview locations in a way that it saves time, both the coordination time and interview/travel time.
 
@@ -8,7 +8,7 @@ Python3
 Mongodb
 Google Maps API
 
-WHAT I DID?
+**WHAT I DID?**
 
 INPUT: The algorithm takes input from the user. These inputs are Address/location where the agents should visit to investigate/interview and the Language the surrounding/household speaks. The next input is if there is a requirement of an agent who specializes in a certain field (this part is not integrated with the front end).
 
@@ -21,7 +21,7 @@ The third is a list of unavailable investigators who will start to work or who a
 
 API: I used Google APIs to calculate the ETA for the investigators. I need an API key for that which is saved in the text file locally that the program accesses.
 
-HOW TO USE?
+**HOW TO USE?**
 
 There’s a desktop application for using the algorithm. The coordinator inputs the address/location in the address field and Language in the Language field. And the output will be received as the IDs of investigators who should be contacted to visit that location.
 
@@ -31,11 +31,11 @@ If running only the algorithm use
 Pass address and language as arguments. After this the prompt asks the question if specialized agents are required? And the options along with that. If the specialization is required then type which specialization otherwise type “No”. The specialization options given right now are of Cryptanalyst, IT, Forensic Chemist and Connoisseur. 
 The output will be a list with IDs of two investigators.
 
-ADDITIONAL FEATURES:
+**ADDITIONAL FEATURES:**
 
 The algorithm I have written is a very basic skeleton which is based on a few assumptions such as the number of people working on a case are around 10-15 (which is ideal case though) such that the time complexity would not impact the performance much. Another assumption is that I/O works perfectly fine without network failure and security issues. So there is scope of improvement.
 
-Currently, I am considering that the coordinator is managing only one case, ‘GAMMA’. Although it may be the case that the coordinator manages multiple cases and a few special agents are working on multiple cases which will impact the availability. This can be implemented in future. Based on this I will need to add the field where first I select the Case name.
+Currently I am considering that the coordinator is managing only one case, ‘GAMMA’. Although it may be the case that the coordinator manages multiple cases and a few special agents are working on multiple cases which will impact the availability. This can be implemented in future. Based on this I will need to add the field where first I select the Case name.
 
 Asynchronous programming can be added to improve the response time.  Fault tolerance needs to be handled with replication (with or without Docker). Once there is replication Data inconsistency needs to be handled across databases and collections. (Need to check the implementation of locks while updating the db.)
 
@@ -50,6 +50,6 @@ Ways to improve the design of the database and integrating with the backend with
 
 Need to consider the security aspects carefully. Example, use of environment variables for mongodb credentials while dockerizing.
 
-Summary:
+**Summary:**
 I learnt alot from being a part of this project. Although I could not implement the front end by myself, I learnt in the process. An example of learning was Azure blob implementation. Even though I did not use it, just giving it a try and coming across errors helped me learn. The backend implementation was something I would have loved to do but due to time constraints that could not happen. Also, the improvement part I have mentioned I hoped to have implemented at least some of those. One of the most important lessons for me was the CI/CD (Sam’s presentation on CI/CD was well done) and other presentations also helped me learn new topics.
 
