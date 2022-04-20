@@ -92,7 +92,7 @@ class Canvasser:
 				if list_dist[0]>(list_eta[1]): 
 					alloted_i.append(keys_list_eta[1])
 					print("following officers are nearby, contact them:")
-					self.db.investigation_assigned.insert_one({"location":location,"investigators":alloted_i})
+					self.db.investigation_assigned.insert_one({"location":self.location,"investigators":alloted_i})
 					return alloted_i
 		
 		for k in dist:
