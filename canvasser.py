@@ -4,7 +4,7 @@ from pprint import pprint
 import requests
 import smtplib
 import datetime
-from time import gmtime, strftime
+from time import gmtime, strftime, localtime
 import time
 import sys
 
@@ -128,7 +128,7 @@ class Canvasser:
 			if key != None and key not in alloted_i and len(alloted_i)<2:
 				alloted_i.append(key)
 				deets[key]=available_i_details[key]
-				deets[key]['start_time'] = time.strftime("%H:%M:%S", gmtime())
+				deets[key]['start_time'] = time.strftime("%H:%M:%S", localtime())
 				self.db.Unavailable_investigators.insert_one({"id":key,"details":available_i_details[key]})
 				self.db.Available_investigators.delete_one({"id":key})
 				del available_i_details[key]
@@ -149,12 +149,12 @@ class Canvasser:
 				r = requests.get(url+"origins=" + i_details[key]['curr_loc'] + "&destinations="+location + "&key=" +api_key)
 				if option == 'unavailable':
 					
-					now=time.strftime("%H:%M:%S", gmtime())
+					now=time.strftime("%H:%M:%S", localtime())
 					start_time = time.strptime(i_details[key]['start_time'],'%H:%M:%S')
 					now_time = time.strptime(now,'%H:%M:%S')
 					print("time difference:", (time.mktime(now_time)-time.mktime(start_time))/60)
 					
-					dist[key]=r.json()["rows"][0]["elements"][0]["duration"]["value"] + (900 - (time.mktime(now_time)-time.mktime(start_time))/60)
+					dist[key]=r.json()["rows"][0]["elements"][0]["duration"]["value"] + (15 - (time.mktime(now_time)-time.mktime(start_time))/60)
 					
 				elif option == 'available':
 					dist[key]=r.json()["rows"][0]["elements"][0]["duration"]["value"] 					
